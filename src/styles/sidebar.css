@@ -1,0 +1,8 @@
+.sidebar-item-active {
+    @apply border-l-4 rounded-none border-r-0 border-y-0 border-red-500 bg-neutral-200;
+    background-color: rgb(229 229 229 / var(--tw-bg-opacity)) !important;
+}
+
+#sidebar .sidebar-item {    
+    border-left-width: 4px;
+}

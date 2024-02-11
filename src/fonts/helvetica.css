@@ -1,0 +1,35 @@
+
+@font-face {
+    font-family: 'Helvetica';
+    font-weight: 100;
+    font-display: swap;
+    src: url('@/assets/fonts/Helvetica-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Helvetica';
+    font-weight: 400;
+    font-display: swap;
+    src: url('@/assets/fonts/Helvetica.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Helvetica';
+    font-weight: 700;
+    font-display: swap;
+    src: url('@/assets/fonts/Helvetica-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Helvetica Rounded';
+    font-weight: 700;
+    font-display: swap;
+    src: url('@/assets/fonts/HelveticaRounded-Bold.otf') format('opentype');
+}
+
+
+.helvetica {
+    font-family: 'Helvetica';
+
+}
+
+.helvetica.round {
+    font-family: 'Helvetica Rounded';
+}
