@@ -20,6 +20,7 @@
     "@mantine/nprogress": "^7.5.2",
     "@mantine/tiptap": "^7.5.2",
     "@tabler/icons-react": "^2.47.0",
+    "@tanstack/react-query": "^5.20.1",
     "@tanstack/react-router": "^1.16.0",
     "@tanstack/router-devtools": "^1.16.0",
     "@tanstack/router-vite-plugin": "^1.16.1",
@@ -29,6 +30,8 @@
     "axios": "^1.6.5",
     "dayjs": "^1.11.10",
     "immer": "^10.0.3",
+    "jotai": "^2.6.4",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "recharts": "^2.12.0",
@@ -42,6 +45,7 @@
     "postcss": "^8.4.35",
     "postcss-preset-mantine": "^1.13.0",
     "postcss-simple-vars": "^7.0.1",
+    "prettier": "3.2.5",
     "tailwindcss": "^3.4.1",
     "vite": "^5.0.12"
   }

@@ -1,8 +1,9 @@
+@import url('./fonts/helvetica.css');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('./fonts/helvetica.css');
 
 * {
     font-family: 'Helvetica';
