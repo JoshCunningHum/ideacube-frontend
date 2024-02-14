@@ -29,10 +29,11 @@
     left: -6.3%;
     transform: rotate(64.53deg);
     background: rgba(255, 178, 27, 0.78);
+}
 
-    &.animate {
-        animation-name: bxy;
-    }
+.box-yellow.animate{
+    animation-name: bxy;
+
 }
 
 @keyframes bxy {
@@ -54,10 +55,10 @@
     left: 60.7%;
     transform: rotate(35.326deg);
     background: rgba(131, 111, 255, 0.57);
+}
 
-    &.animate {
-        animation-name: bxp;
-    }
+.box-purple.animate {
+    animation-name: bxp;
 }
 
 @keyframes bxp {
@@ -79,10 +80,10 @@
     left: -27.3%;
     transform: rotate(42.247deg);
     background: rgba(111, 255, 160, 0.57);
+}
 
-    &.animate {
-        animation-name: bxg;
-    }
+.box-green.animate {
+    animation-name: bxg;
 }
 
 @keyframes bxg {
@@ -104,10 +105,10 @@
     left: 87.7%;
     transform: rotate(64.53deg);
     background: rgba(62, 56, 63, 0.57);
+}
 
-    &.animate {
-        animation-name: bxb;
-    }
+.box-black.animate {
+    animation-name: bxb;
 }
 
 @keyframes bxb {
