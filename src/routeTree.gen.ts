@@ -16,7 +16,6 @@ import { Route as LoginImport } from './routes/login'
 import { Route as UserImport } from './routes/_user'
 import { Route as AdminImport } from './routes/_admin'
 import { Route as IndexImport } from './routes/index'
-import { Route as AdminTestImport } from './routes/_admin/test'
 import { Route as AdminTaskImport } from './routes/_admin/task'
 import { Route as AdminStreamImport } from './routes/_admin/stream'
 import { Route as AdminFileImport } from './routes/_admin/file'
@@ -52,11 +51,6 @@ const AdminRoute = AdminImport.update({
 const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
-} as any)
-
-const AdminTestRoute = AdminTestImport.update({
-  path: '/test',
-  getParentRoute: () => AdminRoute,
 } as any)
 
 const AdminTaskRoute = AdminTaskImport.update({
@@ -144,10 +138,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminTaskImport
       parentRoute: typeof AdminImport
     }
-    '/_admin/test': {
-      preLoaderRoute: typeof AdminTestImport
-      parentRoute: typeof AdminImport
-    }
     '/_user/$id/chat': {
       preLoaderRoute: typeof UserIdChatImport
       parentRoute: typeof UserImport
@@ -180,7 +170,6 @@ export const routeTree = rootRoute.addChildren([
     AdminFileRoute,
     AdminStreamRoute,
     AdminTaskRoute,
-    AdminTestRoute,
   ]),
   UserRoute.addChildren([
     UserIdChatRoute,
