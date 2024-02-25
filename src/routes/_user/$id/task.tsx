@@ -48,7 +48,11 @@ const tasks: Task[] = [
 ];
 
 function RouteComponent() {
-  const [selected, setSelected] = React.useState("all");
+  const [selected, setSelected] = React.useState("All");
+  const shownTasks = React.useMemo(() => {
+    if (selected === "All") return tasks;
+    return tasks.filter((task) => task.status === selected);
+  }, [selected]);
   const { id } = Route.useParams();
   return (
     <Container fluid classNames={{ root: "px-8 py-4" }}>
@@ -57,10 +61,10 @@ function RouteComponent() {
           c="black"
           underline="never"
           classNames={{
-            root: `cursor-pointer ${selected === "all" ? "border-b-2 border-black -mb-1.5 pb-1 text-lg" : "hover:border-b-2 hover:border-neutral-400 hover:-mb-1.5 hover:pb-1 text-lg"}`,
+            root: `cursor-pointer ${selected === "All" ? "border-b-2 border-black -mb-1.5 pb-1 text-lg" : "hover:border-b-2 hover:border-neutral-400 hover:-mb-1.5 hover:pb-1 text-lg"}`,
           }}
           unstyled={true}
-          onClick={() => setSelected("all")}
+          onClick={() => setSelected("All")}
         >
           All
         </Anchor>
@@ -99,7 +103,7 @@ function RouteComponent() {
         </Anchor>
       </Group>
       <Stack classNames={{ root: "pt-8" }}>
-        {tasks.map((task) => (
+        {shownTasks.map((task) => (
           <Link
             to="/$id/task/$taskid"
             params={{ id: id, taskid: task.id.toString() }}
