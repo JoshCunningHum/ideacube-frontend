@@ -1,5 +1,5 @@
 import * as React from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import {
   Anchor,
   Container,
@@ -49,6 +49,7 @@ const tasks: Task[] = [
 
 function RouteComponent() {
   const [selected, setSelected] = React.useState("all");
+  const { id } = Route.useParams();
   return (
     <Container fluid classNames={{ root: "px-8 py-4" }}>
       <Group gap={"1.5rem"}>
@@ -99,7 +100,13 @@ function RouteComponent() {
       </Group>
       <Stack classNames={{ root: "pt-8" }}>
         {tasks.map((task) => (
-          <TaskCard task={task} key={task.id} />
+          <Link
+            to="/$id/task/$taskid"
+            params={{ id: id, taskid: task.id.toString() }}
+            key={task.id}
+          >
+            <TaskCard task={task} />
+          </Link>
         ))}
       </Stack>
     </Container>
