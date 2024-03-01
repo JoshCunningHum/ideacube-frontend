@@ -55,7 +55,7 @@ function RouteComponent() {
   }, [selected]);
   const { id } = Route.useParams();
   return (
-    <Container fluid classNames={{ root: "px-8 py-4" }}>
+    <Container fluid classNames={{ root: "p-4 xl:px-8 xl:py-4" }}>
       <Group gap={"1.5rem"}>
         <Anchor
           c="black"

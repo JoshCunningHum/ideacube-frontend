@@ -11,7 +11,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
   return (
     <Container
       classNames={{
-        root: "py-6 px-8 m-0 bg-white rounded-lg shadow-lg hover:cursor-pointer hover:bg-gray-50",
+        root: "p-4 xl:py-6 xl:px-8 m-0 bg-white rounded-lg shadow-lg hover:cursor-pointer hover:bg-gray-50",
       }}
       fluid
     >
@@ -23,8 +23,8 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
             <IconClipboardList className="h-10 w-10" />
           )}
           <div>
-            <p className="font-bold text-xl">{task.title}</p>
-            <p>Deadline: {task.deadline}</p>
+            <p className="font-bold text-lg xl:text-xl">{task.title}</p>
+            <p className="text-s xl:text-base">Deadline: {task.deadline}</p>
           </div>
         </div>
         <p
