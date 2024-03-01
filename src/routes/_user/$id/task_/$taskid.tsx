@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import {
+  ActionIcon,
   Container,
   FileInput,
   FileInputProps,
@@ -39,7 +40,9 @@ function RouteComponent() {
   return (
     <Container fluid classNames={{ root: "px-8 py-4" }}>
       <Link to="/$id/task" params={{ id: id }}>
-        <IconArrowLeft size={30} className="" />
+        <ActionIcon variant="transparent" color="black">
+          <IconArrowLeft size={30} className="" />
+        </ActionIcon>
       </Link>
       <Title order={1} mt={"lg"}>
         Essential Data Knowledge part 1
