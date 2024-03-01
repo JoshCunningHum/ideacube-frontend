@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import {
   ActionIcon,
+  Button,
   Container,
   FileInput,
   FileInputProps,
@@ -10,7 +11,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { IconArrowLeft } from "@tabler/icons-react";
+import { IconArrowLeft, IconCheck } from "@tabler/icons-react";
 
 export const Route = createFileRoute("/_user/$id/task/$taskid")({
   component: RouteComponent,
@@ -44,7 +45,7 @@ function RouteComponent() {
           <IconArrowLeft size={30} className="" />
         </ActionIcon>
       </Link>
-      <Title order={1} mt={"lg"}>
+      <Title order={1} mt={"md"}>
         Essential Data Knowledge part 1
       </Title>
       <Text>Deadline: 3:00 PM</Text>
@@ -76,6 +77,14 @@ function RouteComponent() {
         onChange={setFiles}
         valueComponent={ValueComponent}
       />
+      <Button
+        leftSection={<IconCheck size={24} />}
+        variant="filled"
+        classNames={{ root: "bg-green-300 text-black" }}
+        mt={"xl"}
+      >
+        Turn in
+      </Button>
     </Container>
   );
 }
