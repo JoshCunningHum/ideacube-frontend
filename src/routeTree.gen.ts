@@ -25,6 +25,7 @@ import { Route as UserIdTaskImport } from './routes/_user/$id/task'
 import { Route as UserIdStreamImport } from './routes/_user/$id/stream'
 import { Route as UserIdFileImport } from './routes/_user/$id/file'
 import { Route as UserIdChatImport } from './routes/_user/$id/chat'
+import { Route as UserIdTaskTaskidImport } from './routes/_user/$id/task_/$taskid'
 
 // Create/Update Routes
 
@@ -98,6 +99,11 @@ const UserIdChatRoute = UserIdChatImport.update({
   getParentRoute: () => UserRoute,
 } as any)
 
+const UserIdTaskTaskidRoute = UserIdTaskTaskidImport.update({
+  path: '/$id/task/$taskid',
+  getParentRoute: () => UserRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -158,6 +164,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UserIdIndexImport
       parentRoute: typeof UserImport
     }
+    '/_user/$id/task/$taskid': {
+      preLoaderRoute: typeof UserIdTaskTaskidImport
+      parentRoute: typeof UserImport
+    }
   }
 }
 
@@ -177,6 +187,7 @@ export const routeTree = rootRoute.addChildren([
     UserIdStreamRoute,
     UserIdTaskRoute,
     UserIdIndexRoute,
+    UserIdTaskTaskidRoute,
   ]),
   LoginRoute,
   RegisterRoute,
