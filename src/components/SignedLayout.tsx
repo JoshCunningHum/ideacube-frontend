@@ -1,9 +1,9 @@
 import * as React from "react";
-import { AppShell, Burger } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { AppShell, Burger, em } from "@mantine/core";
+import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { NavBar } from "./NavBar";
 import { SideBar } from "./SideBar";
-import '../styles/navbar.css'
+import "../styles/navbar.css";
 
 export function SignedLayout({ children, ...props }: any) {
     const [opened, { toggle }] = useDisclosure();
@@ -14,14 +14,13 @@ export function SignedLayout({ children, ...props }: any) {
             navbar={{
                 width: { base: 200, md: 220, lg: 253 },
                 breakpoint: "sm",
-                collapsed: { mobile: !opened },
+                collapsed: { mobile: !opened, desktop: false },
             }}
             withBorder={false}
             padding="md"
         >
-            <AppShell.Header
-                withBorder>
-                <div className="flex absolute w-full items-center gap-2 p-4 px-14 h-full">
+            <AppShell.Header withBorder>
+                <div className="flex absolute w-full items-center gap-2 p-4 px-4 md:px-14 h-full">
                     <Burger
                         opened={opened}
                         onClick={toggle}
@@ -37,9 +36,7 @@ export function SignedLayout({ children, ...props }: any) {
                 <SideBar />
             </AppShell.Navbar>
 
-            <AppShell.Main className="bg-neutral-200">
-                {children}
-            </AppShell.Main>
+            <AppShell.Main className="bg-neutral-200">{children}</AppShell.Main>
         </AppShell>
     );
 }

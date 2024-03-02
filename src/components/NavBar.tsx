@@ -1,15 +1,19 @@
 import { Avatar, Group, Title } from "@mantine/core";
 import "../styles/logo.css";
 import React from "react";
-import { IconBell, IconSettings } from '@tabler/icons-react'
+import { IconBell, IconSettings } from "@tabler/icons-react";
 
 export const NavBar = () => {
     return (
-        <Group justify="space-between" className="w-full">
-
+        <Group
+            justify="space-between"
+            className="w-full"
+        >
             <Group className="gap-16">
-
-                <Group gap="sm">
+                <Group
+                    gap="sm"
+                    visibleFrom="sm"
+                >
                     <div className="root squared helvetica">
                         <div className="box box-red"></div>
                         <div className="box box-yellow"></div>
@@ -23,15 +27,30 @@ export const NavBar = () => {
                     </div>
                 </Group>
 
-                <Title order={4} className="font-semibold">CSIT337 - Correlation Course</Title>
+                <Title
+                    order={4}
+                    className="font-semibold text-sm md:text-lg"
+                >
+                    CSIT337 - Correlation Course
+                </Title>
             </Group>
 
-            <Group gap="md">
-                <IconSettings />
-                <IconBell />
-                <Avatar radius="xl" />
-            </Group>
-
+            <NavBarMenu />
         </Group>
     );
 };
+
+export const NavBarMenu = ({ sidebar = false }) => (
+    <Group
+        gap={sidebar ? "xl" : "md"}
+        visibleFrom={!sidebar ? "sm" : undefined}
+        hiddenFrom={sidebar ? "sm" : undefined}
+    >
+        <IconSettings size={sidebar ? 40 : undefined} />
+        <IconBell size={sidebar ? 40 : undefined} />
+        <Avatar
+            size={sidebar ? 40 : undefined}
+            radius="xl"
+        />
+    </Group>
+);
