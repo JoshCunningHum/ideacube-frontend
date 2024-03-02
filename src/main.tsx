@@ -18,6 +18,7 @@ declare module '@tanstack/react-router' {
 
 // Mantine Styles
 import '@mantine/core/styles.css';
+import '@mantine/dates/styles.css';
 import "./index.css";
 
 const rootElement = document.getElementById('app')!
